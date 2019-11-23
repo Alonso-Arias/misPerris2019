@@ -1,0 +1,966 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*Código que indica las caracteristicas del contenedor, tamaño máximo y aplica flexbox para hacerlo responsive*/
+.contenedor {
+	background: #fff;
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+/*Color de Fondo Predeterminado de la Página*/
+body {
+	background: #fff;
+}
+
+/*Características del Encabezado de la Página*/
+header {
+	background: #6fa8aa;
+	width: 100%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+/*Código Para dar las Caracteristicas al Logo de la Página*/
+header .logo {
+	color: #fff;
+	font-size: 30px;
+	margin: auto;
+	padding: 15px;
+}
+
+header .logo img {
+	width: 100%;
+	vertical-align: top;
+}
+
+header .logo a {
+	color: #fff;
+	text-decoration: none;
+	line-height: 50px;
+}
+
+/*Características del Menú de la Página*/
+.menu {
+	width: 100%;
+	/* Flexbox */
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+/*Características visuales del Menú de la Página*/
+.menu a {
+	/*Poner el borde de los botones en blanco con border-buttom*/
+	border-bottom: #6fa8aa 2px solid;
+	background: #5F9EA0;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+
+	/* Flexbox */
+	flex-grow: 1; /*Especifica el numero maximo de items flex que pueden adecuarse en una zona*/
+}
+
+/*Código Para dar las Características al Contenedor del Carrusel*/
+.carrusel {
+	padding-top: 5px;
+	background: #6fa8aa;
+	width: 100%;
+}
+
+/*Código para centrar redes sociales*/
+.social {
+	margin: auto;
+	background: #5f9ea0;
+	padding: 5px;
+	width: 100%;	
+	text-align: center;
+	flex-wrap: wrap;
+}
+
+.social li{
+	display: inline;
+	text-align: center;
+}
+
+/*Código Para Cambiar el Cursor las Redes Sociales*/
+.social:hover {
+	cursor:pointer;
+}
+
+div .links a {
+	flex-grow: 1;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+}
+
+/*Código Para Dar Tamaño y Orden a los Enlaces de las Redes Sociales*/
+.fab {
+	text-align: center;
+	color: #5f9ea0;
+	width: 50px;
+    height: 50px;
+	padding: 12px;
+    border-radius: 50%;
+	font-size: 24px;
+	padding-left: 14px;
+	text-decoration: none;
+	box-shadow: 5px 5px 8px #A9A9A9;
+}
+
+/*Código Para Dar Tamaño y Orden al Enlace del Correo Eléctronico*/
+.far {
+	text-align: center;
+	color: #5f9ea0;
+	width: 50px;
+    height: 50px;
+	padding: 17px;
+	border-radius: 50%;
+	font-size: 20px;
+	padding-left: 16px;
+	text-decoration: none;
+	box-shadow: 5px 5px 8px #A9A9A9;
+}
+
+/*Códigos Para Dar Tamaño y Orden a las Redes Sociales*/
+.fa-facebook-f {
+	background: #fff;
+	margin: 7px;
+}
+
+.fa-twitter {
+	background: #fff;
+	margin: 7px;
+}
+
+.fa-instagram {
+	background: #fff;
+	margin: 7px;
+}
+
+.fa-envelope {
+	background: #fff;
+	margin: 7px;
+}
+
+/*Contenedor Publicidad Rescate*/
+.publicidad {
+	width: 100%;
+}
+
+/*Código Para Asignar las Cualidades a las Letras en la Palabra "RESCATE"*/
+.rescate {
+	width: 100%;
+	background:#fff;
+	color: #111;
+	text-decoration: none;
+	text-align: right;
+	align-items: center;
+	height: 40px;
+	padding-top: 10px;
+	padding-right: 35px;
+	font-size: 20px;
+	font-family: Helvetica Narrow, sans-serif;
+}
+
+/*Código Para Asignar las Cualidades a las Letras en la Palabra "ETAPA UNO"*/
+.etapa {
+	width: 100%;
+	background: #fff;
+	color: #9a9a9a;
+	text-align: right;
+	align-items: center;
+	height: 25px;
+	padding-right: 35px;
+	font-size: 15px;
+    font-family: Helvetica Narrow, sans-serif;
+}
+
+/*Código Para Asignar las Cualidades a la Línea Ubicada Después de la Palabra "ETAPA UNO"*/
+.linea {
+	width: 100%;
+	background: #fff;
+	color: #808080;
+	text-align: right;
+	align-items: center;
+	height: 40px;
+	padding-right: 35px;
+	font-size: 15px;
+	font-family: Helvetica Narrow, sans-serif;
+}
+
+/*Código Para Asignar las Cualidades al Primer Parrafo Ubicado Bajo la Primera Línea*/
+.parrafo1 {
+	width: 100%;
+	background: #fff;
+	color: #808080;
+	text-align: right;
+	padding-right: 35px;
+	padding-left: 10px;
+	align-items: center;
+	height: 40px;
+	font-size: 12px;
+	font-family: Helvetica Narrow, sans-serif;
+}
+
+/*Propiedades Imagén Perro Rescate*/
+.perro {
+	width: 100%;
+	padding: 40px;
+}
+
+/*Propiedades Para Dejar la Imagén del Perro Responsive*/
+.perro img {
+	width: 60%;
+	float: right;
+}
+
+/*Propiedades Imagén Perro Rescate*/
+.crowfunding {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+/*Propiedades Para Dejar la Imagén de crowfunding Responsive*/
+.crowfunding img {
+	width: 60%;
+	float: left;
+	padding: 40px;
+}
+
+/*Contenedor Públicidad Crowfunding*/
+.financiamiento {
+	width: 100%;
+}
+
+/*Código Para Asignar las Cualidades a las Letras en la Palabra "CROWFUNDING"*/
+.textcrow {
+	width: 100%;
+	background: #fff;
+	color: #111;
+	text-decoration: none;
+	padding-left: 10px;
+	height: 40px;
+	padding-top: 10px;
+	font-size: 20px;
+	font-family: Helvetica Narrow, sans-serif;
+}
+
+/*Código Para Asignar las Cualidades a las Letras en la Palabra "FINANCIAMIENTO"*/
+.financiamiento {
+	width: 100%;
+	background: #fff;
+	padding-left: 10px;
+	color: #A9A9A9;
+	height: 25px;
+	font-size: 15px;
+	font-family: Helvetica Narrow, sans-serif;
+}
+
+/*Código Para Asignar las Cualidades a la Línea Ubicada Después de la Palabra "FINANCIAMIENTO"*/
+.linea2 {
+	width: 100%;
+	background: #fff;
+	color: #808080;
+	height: 40px;
+	padding-left: 10px;
+	font-size: 15px;
+	font-family: Helvetica Narrow, sans-serif;
+}
+
+.publicidadAbajo{
+	width: 100%;
+	height: 210px;
+}
+
+/*Código Para Asignar las Cualidades al Segundo Parrafo Ubicado Bajo la Segunda Línea*/
+.parrafo2 {
+	width: 100%;
+	background: #fff;
+	color: #808080;
+	margin-bottom: 35px;
+	padding-left: 10px;
+	padding-right: 30px;
+	font-size: 13px;
+	font-family: Helvetica Narrow, sans-serif;
+}
+
+/*Código Para dar Atributos Texto del Botón*/
+.enlace {
+	width: 140px; 
+	padding: 6px;
+	height: 40px;
+    list-style: none;
+	border: 3px solid #111;
+    color: #111;
+	font-size: 18px;
+	font-family: Helvetica Narrow, sans-serif;
+	font-weight: bolder;
+}
+
+/*Código Para dar Atributos al Botón*/
+.boton{
+	padding-left: 10px;
+	text-align: center;
+	width: 100%;
+	display: flex;
+}
+
+/*Código Para dar Atributos al Botón*/
+.contenedorCollage {
+	width: 100%;
+	display:flex;
+	background: #5f9ea0;
+	margin-top: 20px;
+}
+
+/*Código Para Ajustar Caja Izquierda Collage*/
+.cajaIzq {
+	padding :5px;
+    width: 100%;
+}
+
+/*Código Para Ajustar Caja Medio del Collage*/
+.cajaMedio {
+	padding: 5px;
+    width: 100%;
+	height: 60%;
+}
+
+/*Código Para Ajustar Caja Derecha del Collage*/
+.cajaDer {
+	padding: 5px;
+    width: 100%;
+	height: 60%;
+}
+
+/*Código Para dar Atributos a las Imágenes Caja Izquierda*/
+.cajaIzq img {
+	padding: 10px;
+    width: 100%;
+	height: 198px;
+    overflow: hidden;
+	justify-content:space-between;
+	text-align: center;
+}
+
+/*Código Para dar Atributos a las Imágenes Caja Central*/
+.cajaMedio img {
+	padding: 10px;
+    width: 100%;
+	height: 300px;
+	flex-direction: column;
+	justify-content: space-between ;
+}
+
+/*Código Para dar Atributos a las Imágenes Caja Derecha*/
+.cajaDer img {
+	padding: 10px;
+    width: 100%;
+	height: 300px;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/*Código Para dar Efecto de Zoom a las Imágenes del Collage*/
+.contenedorCollage img:hover {
+    transform:scale(1.5);
+    transition:all ease 1.5s;
+    cursor:pointer;
+}
+
+/*Código Para Cambiar el Cursor Sobre el Botón*/
+.boton:hover {
+    cursor:pointer;
+}
+
+/*Código Para el Último Texto*/
+.end {
+	width: 100%;
+	background: rgb(206, 204, 204);
+	color: #808080;
+	height: 70px;
+	padding-left: 30px;
+	padding-top: 20px;
+	font-size: 8px;
+	font-family: Helvetica Narrow, sans-serif;
+}
+
+/*Código para darle estilos al texto de "olvidaste tú contraseña"*/
+.contraseña{
+	margin-left: 20px;
+	font-family: Helvetica Narrow, sans-serif;
+	font-size: 12px;
+	color: #2F4F4F;
+	margin-bottom: 3px;
+}
+
+.recupera{
+	margin-right: 20px;
+	font-family: Helvetica Narrow, sans-serif;
+	font-size: 12px;
+	color: #5F9EA0;
+	margin-bottom: 3px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/*Código para controlar los input*/
+li label{
+	margin-left: 20px;
+}
+
+.registro li input{
+	margin: auto;
+	width: 35%;
+	margin-right: 120px;
+}
+
+/*Código para darle estilos al botón de iniciar sesión*/
+.btnEnviar{
+	margin: auto;
+	margin-bottom: 20px;
+	background: #5F9EA0;
+	color: #F0F8FF;
+	border: none;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+	font-size: 15px;
+	cursor: pointer;
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 8px;
+	font-weight: bold;
+}
+
+.btnSocial{
+	margin: auto;
+	background: #5F9EA0;
+	color: #F0F8FF;
+	border: none;
+    padding: 5px 15px;
+    text-align: center;
+	text-decoration: none;
+	padding-left: 50px;
+	cursor: pointer;
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.iniciarSesion{
+	margin-top: 15px;
+	width: 140px;
+	margin: auto;
+	color: #5F9EA0;
+	border: none;
+    padding: 5px 15px;
+	text-align: center; 
+	text-decoration: underline #5F9EA0;
+	font-size: 15px;
+	cursor: pointer;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.gitlogo{
+	margin-right: 5px;
+	width: 18px;
+	height: 18px;
+}
+
+/*Código para darle estilos al botón de confirmar*/
+.btnConfirmar{
+	margin: auto;
+	background: #5F9EA0;
+	color: white;
+	border: none;
+	margin-top: 15px;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+	font-size: 15px;
+	cursor: pointer;
+	display: flex;
+	flex-wrap: wrap;
+	border-radius: 8px;
+}
+
+/*Código para centrar el formulario de login*/
+.login {
+	width: 100%;
+	padding: 5px;
+	padding-top: 50px;
+	padding-bottom: 98px;
+	
+	/*Flexbox*/
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/*Código para centrar contenido del formulario login*/
+.loginContenedor{
+	padding-bottom: 10px;
+	margin: auto;	
+	text-align: center;
+	align-items: center;
+}
+
+.usuario{
+	padding-bottom: 5px;
+}
+
+.usuario input{
+	width: 180px;
+	color: #008B8B;
+	padding: 5px;
+	margin-left: 48px;
+	margin-block-start: 5px;
+	border: 1px solid #5F9EA0;
+}
+
+/*Código para el texto de acceder*/
+.acceso{
+	width:100%;
+	font-family: Helvetica Narrow, sans-serif;
+	font-size: 25px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-weight: bold;
+	color: #5F9EA0;
+}
+
+.editarMascotas{
+	width:100%;
+	font-family: Helvetica Narrow, sans-serif;
+	font-size: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-weight: bold;
+	color: #5F9EA0;
+}
+
+.formRegistro{
+	width:100%;
+	font-family: Helvetica Narrow, sans-serif;
+	font-size: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-weight: bold;
+	color: #5F9EA0;
+}
+
+.formRegistroMascota{
+	width:100%;
+	font-family: Helvetica Narrow, sans-serif;
+	font-size: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	margin-bottom: 20px;
+	text-align: center;
+	font-weight: bold;
+	color: #5F9EA0;
+}
+
+/*Código para centrar el formulario de registro*/
+.registro{
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	/*Flexbox*/
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.registroContenedor{
+	padding-bottom: 15px;
+	margin: auto;
+	width: 100%;
+}
+
+.registroExitoso{
+	padding-top: 20px;
+	padding-left: 20px;
+	margin-bottom: 10px;
+	font-family: Helvetica Narrow, sans-serif;
+	text-align: center;
+	font-weight: bold;
+	color: #2F4F4F;
+}
+
+/*Código para darle estilos al texto registrarse*/
+.registrate{
+	font-family: Helvetica Narrow, sans-serif;
+	color: #5F9EA0;
+	font-size: 14px;
+	margin: auto;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: underline #5F9EA0;
+}
+
+
+
+.registrado{
+	width:100%;
+	margin-bottom: 350px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.bienvenido{
+	width: 100%;
+	background: #6fa8aa;;
+	color: #fff;
+	text-align: right;
+	text-decoration: none;
+	padding-right: 15px;
+}
+
+.user{
+	color: #fff;
+	text-decoration: none;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 15px;
+}
+
+.usuario{
+	text-decoration: none;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 15px;
+}
+
+.mascotas li{
+	padding: 4px;
+	font-family: Helvetica Narrow, sans-serif;
+	list-style: none;
+	text-align: left;
+	margin-left: 70px;
+}
+
+.mascotas{
+	width: 100%;
+
+	/*Flexbox*/
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.mascotasEditar{
+	width: 100%;
+	padding-bottom: 20px;
+	padding-top: 20px;
+
+	/*Flexbox*/
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.mascotasContenedor input{
+	margin-right: 50px;
+}
+
+.mascotasContenedor{
+	padding-bottom: 15px;
+	margin: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 500px;
+}
+
+.registroMascotas{
+	text-decoration: none;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	text-align: end;
+	padding: 2px;
+   	margin: 0 auto;
+	margin-left: 80px;
+}
+
+.RegistroAdoptante{
+	text-decoration: none;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color:#008080;
+	text-align: left;
+   	margin: 0 auto;
+	font-size: 12px;
+}
+
+.RegistroAdoptante input{
+	width: 180px;
+	padding: 5px;
+	margin-top: 4px;
+	color: #008B8B;	
+	border: 1px solid #5F9EA0;
+	margin-bottom: 2px;
+}
+
+.fecha{
+	margin-top: 3px;
+	margin-left: 2px;
+}
+
+::placeholder{
+	color: #40a8a8;	
+}
+
+.RegistroAdoptante select{
+	width: 180px;
+	padding: 5px;
+	margin-top: 4px;
+	color: #008B8B;
+	border: 1px solid #5F9EA0;
+}
+
+.Inputs input{
+	margin-right: 130px;
+}
+
+.InputsSelect select{
+	margin-right: 215px;
+}
+
+.EstadoSelect select{
+	margin-right: 135px;
+}
+
+.imgMascota{
+	width: 180px;
+	height: 180px;
+}
+
+.imgMascotaEditar{
+	width: 200px;
+	height: 150px;
+	margin-left: 140px;
+}
+
+.mascotasLista{
+	width: 250px;
+	padding: 5px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	list-style: none;
+	font-size: 13px;
+}
+
+.mascotasListado{
+	text-align: end;
+	padding-left: 3.5px;
+}
+.mascotasListadoDatos {
+	text-align: left;
+}
+
+.mascotasMuestra{
+	padding: 15px;
+	border: 4px solid #5F9EA0;
+	text-align: center;
+	flex-grow: 1;
+	list-style: none;
+}
+
+.nomMascota{
+	width: 240px;
+	padding-top: 5px;
+	font-family: Helvetica Narrow, sans-serif;
+	font-size: 25px;
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+	background: #5F9EA0;
+}
+
+.pagination{
+	width: 100%;
+	margin-top: 5px;
+	font-weight: bold;
+	text-align: center;
+	font-family: Helvetica Narrow, sans-serif;
+	font-size: 20px;
+	color: #fff;
+	background: #5F9EA0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.pagination-action{
+	margin: 0 0.1em;
+	display: inline-block;
+	padding: 0.5em;
+	font-size: 1.3em;
+}
+
+.lista{
+	width:100%;
+}
+
+.listaMascotas{
+	width:100%;
+	font-family: Helvetica Narrow, sans-serif;
+	font-size: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+	margin-bottom: 5px;
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+	background: #5F9EA0;
+}
+
+.btnOpcionSi{
+	background: #5F9EA0;
+	font-family: Helvetica Narrow, sans-serif;
+	color: #fff;
+	border: none;
+    padding: 5px 15px;
+    text-decoration: none;
+	font-size: 13px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+.btnOpcionNo{
+	background: #778899;
+	font-family: Helvetica Narrow, sans-serif;
+	color: #fff;
+	border: none;
+    padding: 5px 15px;
+    text-decoration: none;
+	font-size: 13px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+.btnEditar{
+	background: #5F9EA0;
+	font-family: Helvetica Narrow, sans-serif;
+	color: #fff;
+	border: none;
+    padding: 5px 25px;
+    text-decoration: none;
+	font-size: 13px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+.btnEliminar{
+	background: #778899;
+	border-radius: 8px;
+	color: #fff;
+	border: none;
+    padding: 5px 15px;
+    text-decoration: none;
+	font-size: 13px;
+	cursor: pointer;
+}
+
+.btnModificar{
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	background: #5F9EA0;
+	margin-top: 10px;
+	font-family: Helvetica Narrow, sans-serif;
+	color: #fff;
+	border: none;
+    padding: 5px 15px;
+    text-decoration: none;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+.btnCancelar{
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	background: #778899;
+	margin-top: 10px;
+	font-family: Helvetica Narrow, sans-serif;
+	color: #fff;
+	border: none;
+    padding: 5px 15px;
+    text-decoration: none;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+.eliminar{
+	width: 100%;
+	padding: 10px;
+	margin: 0 auto;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 13px;
+}
+
+@media screen and (max-width: 800px) {
+/*https://www.w3schools.com/cssref/css3_pr_mediaquery.asp*/
+.contenedor {
+	flex-direction: column;
+}
+
+header {
+	flex-direction: column;
+	padding: 0;
+}
+
+header .logo {
+	margin: 20px;
+}
+
+.menu {
+	width: 100%;
+	flex-direction: column;
+}
+	
+/*Linea que indicara que se rellenara el espacio completo de los botones del menu*/
+.menu a {
+	width: 100%;
+}
+
+.registro li{
+	font-family: Helvetica Narrow, sans-serif;
+	list-style: none;
+	width: 100%;
+}
+
+.registro li input{
+	font-family: Helvetica Narrow, sans-serif;
+	list-style: none;
+}
+}

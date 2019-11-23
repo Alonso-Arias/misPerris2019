@@ -1,0 +1,43 @@
+{% extends "maqueta.html" %}
+{% load static %}
+{% block contenido %}
+<div class="bienvenido">
+    <a class="usuario">Bienvenido:<a href="#" class="user"><strong>{{user.username}}</strong></a></a><a class="user"> | </a><a class="user" href="{% url 'logout' %}">Cerrar Sesión</a></strong>>
+</div>
+<nav class="menu">
+    <a href="{% url 'index' %}">Inicio</a>
+    <a href="{% url 'mascotas' %}">Mascotas</a>
+    <a href="#">Contáctanos</a>
+    <a href="#">Quienes Somos</a>
+    <a href="#">Servicios</a>
+</nav> 
+{% if user.is_staff %}
+<form class="mascotasEditar" method="POST" enctype="multipart/form-data">
+    <div class="mascotasContenedor">
+            {% csrf_token %}
+        <div>
+            <p class="editarMascotas">{{ mascotas.nombreMascota }}</p>
+        </div>
+            <img src="/media/{{ mascotas.imgMascota }}" class="imgMascotaEditar">
+        <table class="registroMascotas">
+            <tr>
+                <td>Nombre: </td><td>{{form.nombreMascota}}</td>
+            </tr>
+            <tr>
+                <td>Raza: </td><td>{{form.raza}}</td>
+            </tr>
+            <tr>
+                <td>Descripción: </td><td>{{form.descripcion}}</td>
+            </tr>
+            <tr>
+                <td>Estado: </td><td class="EstadoSelect">{{form.estado}}</td>
+            </tr>
+        </table>
+        <div>
+            <button class="btnModificar" type = "submit">Modificar</button>
+            <button class="btnCancelar" href="{% url 'mascotas' %}">Cancelar</button>
+        </div>
+     </div>
+</form>
+{% endif %}
+{% endblock %}

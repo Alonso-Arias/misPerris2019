@@ -1,0 +1,24 @@
+{% extends "maqueta.html" %}
+{% load static %}
+{% block contenido %}
+<div class="bienvenido">
+    <a class="usuario">Bienvenido:<a href="#" class="user"><strong>{{user.username}}</strong></a></a><a class="user"> | </a><a class="user" href="{% url 'logout' %}">Cerrar Sesión</a></strong>
+</div>
+<nav class="menu">
+    <a href="{% url 'index' %}">Inicio</a>
+    <a href="#">Contáctanos</a>
+    <a href="#">Quienes Somos</a>
+    <a href="#">Servicios</a>
+</nav> 
+{% if user.is_staff %}
+<form class="registrado" method="POST">
+    {% csrf_token %}
+    <h3 class="registroExitoso">¿Seguro de que Desea Eliminar a {{ mascotas.nombreMascota }}?</h3>
+    <div class="btnEliminarMascotas">
+    <button class="btnOpcionSi" type = "submit">Sí</button>
+    <a class="btnOpcionNo" href="{% url 'mascotas' %}">No</a>
+    </div>
+</form>
+{% endif %}
+{% endblock %}
+

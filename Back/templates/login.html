@@ -1,0 +1,46 @@
+{% extends "maqueta.html" %}
+{% load static %}
+
+{% block contenido %}
+<nav class="menu">
+    <a href="{% url 'index' %}">Inicio</a>
+    <a href="#">Quienes Somos</a>
+    <a href="#">Servicios</a>
+    <a href="#">Contáctanos</a>
+    <a href="{% url 'registrate' %}">Registrate</a>
+</nav> 
+
+<form class="login" method="POST">
+<section class="loginContenedor">
+    <div>
+        <p class="acceso">Iniciar Sesión</p>
+    </div>
+    <div class="usuario">
+        <table>
+        {%csrf_token%}
+        <tr>
+            <td>{{form.username}}</td>
+        </tr>
+        <tr>
+            <td>{{form.password}}</td>
+        </tr>
+        </table>
+    </div>   
+    <div>
+        <p class="contraseña">¿Olvidaste tú Contraseña?<a class="recupera"> Recuperala Aquí.</a></p>
+    </div>
+    <div>
+        <input type="submit" value="Iniciar Sesión" class="btnEnviar">
+    </div>
+    <div>
+        <a href="{% url 'social:begin' 'google-oauth2' %}" class="btnSocial"><img src="{% static 'images/Logo_google.png' %}" class="gitlogo">Ingresar con Google+</a><br>
+    </div>
+    <div>
+        <a href="{% url 'social:begin' 'facebook' %}" class="btnSocial"><img src="{% static 'images/face_logo.png' %}" class="gitlogo">Ingresar con Facebook</a><br>
+    </div>
+    <div>
+        <a href="{% url 'registrate' %}" class="registrate">Crear Cuenta</a>
+    </div>
+</section>
+</form>
+{% endblock %}

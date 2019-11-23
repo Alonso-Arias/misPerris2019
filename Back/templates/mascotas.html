@@ -1,0 +1,113 @@
+{% extends "maqueta.html" %}
+{% load static %}
+
+{% block contenido %}
+{% if user.is_authenticated %}
+{% if user.is_staff %}
+<div class="bienvenido">
+    <a class="usuario">Bienvenido:<a href="#" class="user"><strong>{{user.username}}</strong></a></a><a class="user"> | </a><a class="user" href="{% url 'logout' %}">Cerrar Sesión</a></strong>
+</div>
+<nav class="menu">
+    <a href="{% url 'index' %}">Inicio</a>
+    <a href="#">Contáctanos</a>
+    <a href="#">Quienes Somos</a>
+    <a href="#">Servicios</a>
+</nav> 
+{% else %}
+<div class="bienvenido">
+    <a class="usuario">Bienvenido:<a href="#" class="user"><strong>{{user.username}}</strong></a></a><a class="user"> | </a><a class="user" href="{% url 'logout' %}">Cerrar Sesión</a></strong>
+</div>
+<nav class="menu">
+    <a href="{% url 'index' %}">Inicio</a>
+    <a href="#">Contáctanos</a>
+    <a href="#">Quienes Somos</a>
+    <a href="#">Servicios</a>
+</nav> 
+<div class="lista">
+    <p class="listaMascotas"><img src="{% static 'images/huella.png' %}" width="30"> Nuestras Mascotas</p>
+</div>
+{% endif %}
+{% endif %}
+{% if user.is_staff %}
+<form class="mascotas" method="POST" enctype="multipart/form-data">
+    <div class="mascotasContenedor">
+         <div>
+            <p class="formRegistroMascota"><img src="{% static 'images/huella.png' %}" width="30"> Registro Mascotas</p>
+        </div>
+        <table class="registroMascotas">
+            {% csrf_token %}
+            <tr>
+                <td>Foto: </td><td class="fotoMascota">{{form.imgMascota}}</td>
+            </tr>
+            <tr>
+                <td>Nombre: </td><td class="Inputs">{{form.nombreMascota}}</td>
+            </tr>
+            <tr>
+                <td>Raza: </td><td class="Inputs">{{form.raza}}</td>
+            </tr>
+            <tr>
+                <td>Descripción: </td><td class="Inputs">{{form.descripcion}}</td>
+            </tr>
+            <tr>
+                <td>Estado: </td><td class="InputsSelect">{{form.estado}}</td>
+            </tr>
+        </table>
+        <div>
+        <button type="submit" class="btnConfirmar">Confirmar</button>
+        </div>
+     </div>
+</form>	
+{% endif %}
+{% if mascotas %}
+{% for m in mascotas %}
+<form class="mascotasLista">
+    <div class="nomMascota"><img src="{% static 'images/huella.png' %}" width="30"> {{ m.nombreMascota }}</div>
+<div class="mascotasMuestra">
+    <img src="/media/{{ m.imgMascota }}" class="imgMascota">
+    <table class="mascotasListado">
+        <tr>
+            <td><strong>Raza:</strong></td><td class="mascotasListadoDatos">{{ m.raza }}</td>
+        </tr>
+        <tr>
+            <td><strong>Descripcion:</strong></td><td class="mascotasListadoDatos">{{ m.descripcion }}</td>
+        </tr>
+        <tr>
+            <td><strong>Estado:</strong></td><td class="mascotasListadoDatos">{{ m.estado }}</td>
+        </tr>
+    </table>
+    {% if user.is_staff %}
+    <div class="eliminar">
+        <a href="{% url 'editarMascotas' m.idMascota %}" class="btnEditar">Editar</a>
+    </div>
+    <div class="eliminar">
+        <a href="{% url 'eliminarMascotas' m.idMascota %}" class="btnEliminar">Eliminar</a>
+    </div>
+    {% else %}
+    <div class="eliminar">
+        <a href="" class="btnEditar">Adoptar</a>
+    </div>
+    {% endif %}
+</div>
+</form>
+{% endfor %}
+{% else %}
+    <p class="registroExitoso">No hay Mascotas Registradas</p>
+{% endif %}
+<div class="pagination">
+        {% if mascotas.has_previous %}
+            <a class="pagination" href="?page=1"><<</a>
+            <a class="pagination" href="?page={{ mascotas.previous_page_number }}"><</a>
+        {% endif %}
+        {% for num in mascotas.paginator.page_range %}
+            {% if mascotas.number == num %}
+                <strong>{{ num }}</strong>
+            {% elif num > mascotas.number|add:'-6' and num < mascotas.number|add:'6' %}
+                {{ num }}
+            {% endif %}
+        {% endfor %}
+        {% if mascotas.has_next %}
+            <a class="pagination" href="?page={{ mascotas.next_page_number }}">></a>
+            <a class="pagination" href="?page={{ mascotas.paginator.num_pages }}">>></a>
+        {% endif %}
+</div>
+{% endblock %}

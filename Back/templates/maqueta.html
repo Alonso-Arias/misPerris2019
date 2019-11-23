@@ -1,0 +1,55 @@
+{% load static %}
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Mis Perris</title>
+    <meta name="description" content="Pagina completa con Flexbox"><!--Utilizamos el descriptor en meta para apoyar la busqueda de contenidos en la web-->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><!--las escalas indican un punto inicial, la escala maxima y minima-->
+    <script src="{% static 'prefix.js' %}" type="test/javascript"></script><!--Script para asegurarq eu en todos los navegadores y dispositivos el sitio se vea igual-->
+    <link rel="stylesheet" href="{% static 'css/jquery.bxslider.css' %}">
+	<link rel="stylesheet" href="{% static 'css/estilos.css' %}"> <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/regionesCiudades.js' %}"></script>
+    <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+    <script src="{% static 'js/validacionFecha.js' %}"></script>
+</head>
+    <body>
+        <div class="contenedor">
+		<header>
+		<div class="logo">
+			<img src="{% static 'images/logo.png' %}" width="150" alt="">
+			<a href="#"></a>
+		</div>
+        </header>
+        {% block contenido %}
+		{% endblock %}
+		<footer class="end">
+ 			<h1>Desarrollo Web y Mobile</h1>
+		</footer>		
+        </div>
+        <script>
+        $(document).ready(function(){
+            $.ajax({url: "http://127.0.0.1:8000/api/v1/mascotas",  success: function(result){
+                $("#listaMascotas").append("mascotas");
+                $.each(result,function(i,items){
+                    $("#contenido").append(`
+                <form class="mascotasLista">
+                    <img class='imgMascota' src='` + result[i].imgMascota + `' alt=''>
+                <div class="mascotasMuestra">
+                    <div class='mascotasListado'>
+                        <td>Nombre: </td>` + result[i].nombreMascota + `<td>
+                        <td>Raza: </td>` + result[i].raza + `<td>
+                        <td>Descripción: </td>` + result[i].descripcion + `<td>
+                        <td>Estado: </td>` + result[i].estado + `<td>
+                    </div>
+                `);
+               });
+            }});
+        })
+    </script>
+    </body>
+</html>

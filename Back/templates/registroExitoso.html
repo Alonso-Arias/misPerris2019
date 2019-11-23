@@ -1,0 +1,20 @@
+{% extends "maqueta.html" %}
+{% load static %}
+
+{% block contenido %}
+<nav class="menu">
+    <a href="{% url 'index' %}">inicio</a>
+    <a href="#">Quienes Somos</a>
+    <a href="#">Servicios</a>
+    <a href="#">Contáctanos</a>
+    <a href="{% url 'login' %}">Iniciar Sesión</a>
+</nav> 
+<form class="registrado">
+<div> 
+    <P class="registroExitoso">Felicidades! Has Sido Registrado Exitosamente!</P>
+</div>
+<div>
+    <a href="{% url 'login' %}" class="iniciarSesion">Iniciar Sesión</a>
+</div>
+</form>
+{% endblock %}

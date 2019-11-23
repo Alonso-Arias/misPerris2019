@@ -1,0 +1,70 @@
+{% extends "maqueta.html" %}
+{% load static %}
+
+{% block contenido %}
+<nav class="menu">
+    <a href="{% url 'index' %}">Inicio</a>
+    <a href="#">Quienes Somos</a>
+    <a href="#">Servicios</a>
+    <a href="#">Contáctanos</a>
+    <a href="{% url 'login' %}">Iniciar Sesión</a>
+</nav> 
+<form class="registro" method="POST" enctype="multipart/form-data">
+    <div class="registroContenedor">
+        <div>
+            <p class="formRegistro">Registro</p>
+        </div>
+        <table class="RegistroAdoptante">
+        {% csrf_token %}
+        <tr>
+            <td>{{form.username}}</td>
+        </tr>    
+        <tr>
+            <td>{{form.password}}</td>
+        </tr>
+        <tr>
+            <td>{{form.password2}}</td>
+        </tr>
+        <tr>
+            <td>{{form.rut}}</td>
+        <tr>
+        <tr>
+            <td>{{form.correo}}</td>
+        <tr>
+        <tr>
+            <td>{{form.correo2}}</td>
+        <tr>
+            <td>{{form.nombre}}</td>
+        </tr>
+        <tr>
+            <td class="fecha">Fecha de Nacimiento</td>      
+        </tr>
+        <tr>
+            <td>{{form.fechaNac}}</td>      
+        </tr>
+        <tr>
+            <td>{{form.telContacto}}</td>
+        </tr>
+        <tr>
+            <td>{{form.region}}</td>
+        </tr>
+        <tr>
+            <td>{{form.ciudad}}</td>
+        </tr>
+        <tr>
+            <td>{{form.tipoVivienda}}</td>
+        </tr>  
+    </table>
+    <div>
+        <button type="submit" class="btnConfirmar">Registrate</button>
+    </div>
+</div>
+</form>	
+<script src="{% static 'js/validacionCaracteres.js' %}"></script>
+<script src="{% static 'js/validacionCorreo.js' %}"></script>
+<script src="{% static 'js/validacionFecha.js' %}"></script>
+<script src="{% static 'js/validacionRut.js' %}"></script>
+<script src="{% static 'js/capitalizar.js' %}"></script>
+<script src="{% static 'js/comboRegiones.js' %}"></script>
+<script src="{% static 'js/viviendas.js' %}"></script>
+{% endblock %}
